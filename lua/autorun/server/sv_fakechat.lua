@@ -2,9 +2,6 @@ util.AddNetworkString("FakePlayerChat")
 
 function FakePlayerChatStart(ply,text,teamChat,isDead)
 
-
-
-
 	local Explode = string.Explode(" ",text)
 
 	local Command
@@ -54,13 +51,11 @@ function FakePlayerChatStart(ply,text,teamChat,isDead)
 				ply:ChatPrint("Missing Message")
 				return
 			end
-			
-			local pteam = Victim:Team()
 
 			net.Start("FakePlayerChat")
 				net.WriteEntity(Victim)
 				net.WriteString(Message)
-				--net.WriteInt(pteam)
+				net.WriteEntity(ply)
 			net.Broadcast()
 			
 		else
