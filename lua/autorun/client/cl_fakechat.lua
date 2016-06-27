@@ -15,11 +15,11 @@ net.Receive("FakePlayerChat", function(len)
 		chat.AddText(team.GetColor(Sender:Team()),Sender:Nick(),Color(255,255,255,255)," made ",team.GetColor(Victim:Team()),Victim:Nick(),Color(255,255,255,255)," say: ")
 	end
 	
-	
+	--[[
 	if Sender ~= LocalPlayer() then
 		Victim = Sender
 	end
-	
+	--]]
 	
 
 	chat.AddText(	Color(255,0,0,255),DeadText,team.GetColor(Victim:Team()),Victim:Nick(),Color(255,255,255,255),":" .. Text
